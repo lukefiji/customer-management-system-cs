@@ -28,23 +28,5 @@ namespace ACM.BL
 
             return isValid;
         }
-
-        /// <summary>
-        /// Retrieves one order.
-        /// </summary>
-        /// <returns></returns>
-        public Order Retrieve(int orderId)
-        {
-            return new Order();
-        }
-
-        /// <summary>
-        /// Saves the order.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            return true;
-        }
     }
 }
