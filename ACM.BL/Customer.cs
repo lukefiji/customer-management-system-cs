@@ -5,9 +5,10 @@ namespace ACM.BL
 {
     public class Customer
     {
+
         // Not automatically created if there are
         // overloaded constructors defined
-        public Customer()
+        public Customer(): this(0) // Constructor chaining
         {
 
         }
@@ -15,8 +16,12 @@ namespace ACM.BL
         public Customer(int customerId)
         {
             CustomerId = customerId;
+            AddressList = new List<Address>();
         }
 
+        // Composition relationship - an object from one class 
+        // is constructed of objects from other classes
+        public List<Address> AddressList { get; set; } 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
