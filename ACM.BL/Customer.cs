@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ACM.BL
 {
-    public class Customer
+    public class Customer : EntityBase
     {
 
         // Not automatically created if there are
@@ -29,6 +29,8 @@ namespace ACM.BL
         public int CustomerType { get; set; }
         public static int InstanceCount { get; set; }
 
+        public override string ToString() => FullName;
+
         public string FullName
         {
             get
@@ -50,7 +52,7 @@ namespace ACM.BL
         /// Validates the customer data.
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 

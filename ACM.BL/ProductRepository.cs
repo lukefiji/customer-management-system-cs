@@ -22,18 +22,39 @@ namespace ACM.BL
                 product.CurrentPrice = 15.96M;
             }
 
+            Object myObject = new Object();
+
             return product;
         }
 
         /// <summary>
-        /// Retrieves one customer.
+        /// Retrieves one product.
         /// </summary>
-        /// <param name="customer"></param>
+        /// <param name="product"></param>
         /// <returns></returns>
-        public bool Save(Customer customer)
+        public bool Save(Product product)
         {
-            // Code that saves the defined product
-            return true;
+            var success = true;
+
+            if (product.HasChanges)
+            {
+                if (product.IsValid)
+                {
+                    if (product.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
     }
 }
